@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Blog — Top 5 gadgets high-tech à petit prix</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background-color: #f5f5f5;
+      color: #333;
+    }
+
+    header {
+      background-color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 40px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    header a {
+      text-decoration: none;
+      color: #007bff;
+      font-weight: 600;
+    }
+
+    .article-container {
+      position: relative;
+      height: 100vh;
+      background: url('https://i.pinimg.com/736x/5b/d0/da/5bd0dabc6c55581d49d96453a06c87c9.jpg') center/cover no-repeat;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.4);
+      backdrop-filter: blur(2px);
+      transition: backdrop-filter 0.4s ease, background 0.4s ease;
+    }
+
+    .article-container:hover .overlay {
+      backdrop-filter: blur(6px);
+      background: rgba(0,0,0,0.6);
+    }
+
+    .article-content {
+      position: relative;
+      z-index: 2;
+      max-width: 700px;
+      background: rgba(255,255,255,0.9);
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.2);
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .article-container:hover .article-content {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    }
+
+    h1 {
+      color: #222;
+      font-size: 2rem;
+      margin-bottom: 10px;
+    }
+
+    p {
+      color: #555;
+      line-height: 1.6;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 12px 28px;
+      background-color: #007bff;
+      color: white;
+      border-radius: 50px;
+      text-decoration: none;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+
+    .btn:hover {
+      background-color: #0056b3;
+      transform: scale(1.05);
+    }
+
+    footer {
+      text-align: center;
+      margin: 40px 0;
+      color: #777;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <a href="blog.html">⬅ Retour au Blog</a>
+    <a href="index.html">Accueil</a>
+  </header>
+
+  <div class="article-container">
+    <div class="overlay"></div>
+    <div class="article-content">
+      <h1>Top 5 gadgets high-tech à petit prix</h1>
+      <p>
+        Envie de technologie sans vous ruiner ? Découvrez notre sélection des meilleurs gadgets high-tech abordables pour 2025 :
+        montres connectées, écouteurs sans fil, mini projecteurs et plus encore. Des innovations accessibles pour tous les budgets !
+      </p>
+      <a href="https://www.google.com/search?q=top+5+gadgets+high+tech+pas+cher" target="_blank" class="btn">Lire plus sur Google</a>
+    </div>
+  </div>
+
+  <footer>© 2025 Shopezz — Tous droits réservés</footer>
+</body>
+</html>

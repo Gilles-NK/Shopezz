@@ -1,0 +1,504 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Notre histoire — Shopezz</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --navy: #0b2239;
+      --accent: #f39c12;
+      --light: #f9fafc;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background: var(--light);
+      color: #333;
+      line-height: 1.6;
+    }
+
+    /* HEADER */
+    header {
+      background: var(--navy);
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 15px 40px;
+    }
+
+    header .logo {
+      font-size: 22px;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+
+    nav a {
+      color: #fff;
+      margin-left: 24px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: 0.3s;
+    }
+
+    nav a:hover, nav a.active {
+      color: var(--accent);
+    }
+    /* HEADER RESPONSIVE */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 15px 20px;
+  }
+
+  header .logo {
+    margin-bottom: 12px;
+    font-size: 20px;
+  }
+
+  nav {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  nav a {
+    flex: 1 1 auto;
+    text-align: center;
+    padding: 8px 0;
+    margin-left: 0;
+    font-size: 14px;
+    border-radius: 8px;
+    background: var(--navy);
+    transition: background 0.3s ease;
+  }
+
+  nav a:hover, nav a.active {
+    background: var(--accent);
+    color: #fff;
+  }
+}
+
+/* POUR ÉCRANS TRÈS PETITS (SMARTPHONES) */
+@media (max-width: 480px) {
+  header {
+    padding: 12px 15px;
+  }
+
+  header .logo {
+    font-size: 18px;
+  }
+
+  nav {
+    gap: 8px;
+  }
+
+  nav a {
+    font-size: 13px;
+    padding: 6px 0;
+  }
+}
+
+
+    /* SECTION NOTRE HISTOIRE */
+    .about {
+      padding: 80px 20px;
+      background: #f9fafc;
+    }
+
+    .about-container {
+      max-width: 1100px;
+      margin: auto;
+      text-align: center;
+    }
+
+    .about h1 {
+      font-size: 38px;
+      color: var(--navy);
+      margin-bottom: 20px;
+    }
+
+    .about .intro {
+      color: #555;
+      font-size: 16px;
+      line-height: 1.7;
+      margin-bottom: 60px;
+    }
+
+    .about-grid {
+      display: flex;
+      align-items: center;
+      gap: 40px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .about-text {
+      flex: 1 1 420px;
+      text-align: left;
+    }
+
+    .about-text h2 {
+      color: var(--accent);
+      font-size: 22px;
+      margin: 20px 0 10px;
+    }
+
+    .about-text p, .about-text ul {
+      color: #555;
+      font-size: 15px;
+      line-height: 1.7;
+    }
+
+    .about-text ul {
+      padding-left: 0;
+      list-style: none;
+    }
+
+    .about-text li {
+      margin: 6px 0;
+    }
+
+    .about-image {
+      flex: 1 1 350px;
+      text-align: center;
+    }
+
+    .about-image img {
+      width: 100%;
+      border-radius: 16px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+      object-fit: cover;
+    }
+
+    /* TIMELINE */
+    .timeline {
+      position: relative;
+      max-width: 900px;
+      margin: 100px auto;
+    }
+
+    .timeline::after {
+      content: '';
+      position: absolute;
+      width: 4px;
+      background: var(--accent);
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .timeline-item {
+      padding: 20px 30px;
+      position: relative;
+      width: 50%;
+    }
+
+    .timeline-item.left {
+      left: 0;
+      text-align: right;
+    }
+
+    .timeline-item.right {
+      left: 50%;
+    }
+
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      top: 20px;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: var(--accent);
+      border: 3px solid #fff;
+      box-shadow: 0 0 0 3px rgba(243,156,18,0.2);
+    }
+
+    .timeline-item.left::before {
+      right: -10px;
+    }
+
+    .timeline-item.right::before {
+      left: -10px;
+    }
+
+    .timeline-item .content {
+      background: white;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .timeline-item h3 {
+      color: var(--navy);
+      margin-bottom: 10px;
+    }
+
+    /* ÉQUIPE */
+    .team {
+      padding: 100px 20px;
+      background: #fff;
+      text-align: center;
+    }
+
+    .team h2 {
+      font-size: 30px;
+      color: var(--navy);
+      margin-bottom: 40px;
+    }
+
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 30px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .member {
+      background: var(--light);
+      padding: 20px;
+      border-radius: 16px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      transition: 0.3s;
+    }
+
+    .member:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+    }
+
+    .member img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 10px;
+      border: 3px solid var(--accent);
+    }
+
+    .member h4 {
+      font-size: 18px;
+      color: var(--navy);
+      margin: 6px 0;
+    }
+
+    .member p {
+      font-size: 14px;
+      color: #666;
+    }
+
+    /* FOOTER */
+    footer {
+      width: 100%;
+      background: var(--navy);
+      color: #f1f5fb;
+      padding: 50px 0 30px;
+      margin-top: 40px;
+    }
+
+    .footer-grid {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 28px;
+    }
+
+    footer h5 {
+      color: var(--accent);
+      font-size: 16px;
+      margin-bottom: 12px;
+      font-weight: 700;
+    }
+
+    footer ul {
+      list-style: none;
+    }
+
+    footer a {
+      color: #cfd8e5;
+      text-decoration: none;
+      font-size: 14px;
+      display: inline-block;
+      margin-bottom: 6px;
+      transition: color 0.3s ease;
+    }
+
+    footer a:hover {
+      color: var(--accent);
+      text-decoration: underline;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.1);
+      text-align: center;
+      padding-top: 18px;
+      font-size: 13px;
+      color: #a9b7c6;
+    }
+
+    @media (max-width: 768px) {
+      .timeline::after {
+        left: 20px;
+      }
+      .timeline-item {
+        width: 100%;
+        padding-left: 60px;
+        text-align: left !important;
+      }
+      .timeline-item::before {
+        left: 10px;
+      }
+      .timeline-item.left, .timeline-item.right {
+        left: 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="logo">Shopezz</div>
+    <nav>
+      <a href="index.html">Accueil</a>
+      <a href="product.html">Boutique</a>
+      <a href="about.html" class="active">Notre histoire</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <!-- SECTION NOTRE HISTOIRE -->
+  <section class="about">
+    <div class="about-container">
+      <h1>Notre histoire</h1>
+      <p class="intro">
+        Chez <strong>Shopezz</strong>, nous croyons qu’un bon achat commence par la confiance.  
+        Fondée en 2024 à Yaoundé, notre ambition est de transformer l’expérience e-commerce en Afrique en alliant qualité, rapidité et proximité.
+      </p>
+
+      <div class="about-grid">
+        <div class="about-text">
+          <h2>Notre mission</h2>
+          <p>
+            Offrir à chacun la possibilité de se faire plaisir en ligne sans stress, grâce à un service client humain, 
+            des produits triés sur le volet et une plateforme fluide.
+          </p>
+
+          <h2>Nos valeurs</h2>
+          <ul>
+            <li>✔ Confiance et transparence</li>
+            <li>✔ Innovation et simplicité</li>
+            <li>✔ Engagement envers nos clients</li>
+            <li>✔ Soutien aux vendeurs locaux</li>
+          </ul>
+        </div>
+
+        <div class="about-image">
+          <img src="https://i.pinimg.com/1200x/a9/d4/67/a9d4674172ffd512b1ba7eae9e2a0709.jpg" alt="Notre équipe Shopezz">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TIMELINE -->
+  <section class="timeline">
+    <div class="timeline-item left">
+      <div class="content">
+        <h3>2024 — Naissance de Shopezz</h3>
+        <p>Lancement officiel de notre plateforme à Yaoundé. Première version du site mise en ligne avec 50 produits locaux.</p>
+      </div>
+    </div>
+    <div class="timeline-item right">
+      <div class="content">
+        <h3>2025 — Croissance et expansion</h3>
+        <p>Ouverture à plus de 1000 vendeurs et création d’un service de livraison interne rapide et sécurisé.</p>
+      </div>
+    </div>
+    <div class="timeline-item left">
+      <div class="content">
+        <h3>2026 — Innovation continue</h3>
+        <p>Intégration d’une IA de recommandation et lancement de l’application mobile Shopezz pour Android & iOS.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ÉQUIPE -->
+  <section class="team">
+    <h2>Notre équipe</h2>
+    <div class="team-grid">
+      <div class="member">
+        <img src="https://randomuser.me/api/portraits/men/75.jpg" alt="Gilles">
+        <h4>Gilles Ngomkap</h4>
+        <p>Fondateur & CEO</p>
+      </div>
+      <div class="member">
+        <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Amina">
+        <h4>Amina Tchoumi</h4>
+        <p>Responsable Marketing</p>
+      </div>
+      <div class="member">
+        <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="Kevin">
+        <h4>Kevin Ndongo</h4>
+        <p>Développeur Front-End</p>
+      </div>
+      <div class="member">
+        <img src="https://randomuser.me/api/portraits/women/85.jpg" alt="Sandra">
+        <h4>Sandra Kouassi</h4>
+        <p>Support Client</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h5>À propos</h5>
+        <ul>
+          <li><a href="about.html">Notre histoire</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="blog.html">Blog</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Aide & Support</h5>
+        <ul>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="livraison.html">Livraison & retours</a></li>
+          <li><a href="service.html">Service client</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Contact</h5>
+        <ul>
+          <li><a href="mailto:gillesngomkap@gmail.com">gillesngomkap@gmail.com</a></li>
+          <li><a href="https://wa.me/689665893" target="_blank">WhatsApp : 6 89 66 58 93</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 <strong>Shopezz</strong>. Tous droits réservés.</p>
+      <p>Développé avec ❤️ par Gilles Ngomkap</p>
+    </div>
+  </footer>
+
+</body>
+</html>

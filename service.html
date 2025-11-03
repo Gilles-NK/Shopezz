@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Service Client — Shopezz</title>
+
+  <!-- Google Fonts & Material Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- CSS personnalisé -->
+  <link rel="stylesheet" href="styles.css">
+
+  <style>
+    .contact-card {
+      background: #fff;
+      border-radius: 14px;
+      padding: 25px;
+      box-shadow: 0 6px 18px rgba(11,43,74,0.05);
+      transition: all 0.3s ease;
+    }
+    .contact-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 24px rgba(11,43,74,0.12);
+    }
+    .faq-item {
+      background: #f6f7fb;
+      padding: 16px 20px;
+      border-radius: 10px;
+      margin-bottom: 12px;
+      transition: all 0.3s ease;
+    }
+    .faq-item:hover {
+      background: #fff3e0;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 18px rgba(11,43,74,0.1);
+    }
+  </style>
+</head>
+
+<body>
+<div class="container">
+
+  <!-- Page title -->
+  <section class="my-5 text-center">
+    <h2 class="fw-bold text-primary">Service Client</h2>
+    <p class="text-muted">Nous sommes là pour répondre à toutes vos questions et résoudre vos problèmes rapidement.</p>
+  </section>
+
+  <!-- Contact options -->
+  <section class="row g-4 mb-5">
+    <div class="col-md-4">
+      <div class="contact-card text-center">
+        <span class="material-icons fs-1 text-primary">email</span>
+        <h5 class="mt-3 fw-bold">Email</h5>
+        <p>Envoyez-nous un email à <a href="mailto:gillesngomkap@gmail.com">gillesngomkap@gmail.com</a></p>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="contact-card text-center">
+        <span class="material-icons fs-1 text-success">whatsapp</span>
+        <h5 class="mt-3 fw-bold">WhatsApp</h5>
+        <p>Contact direct : <a href="https://wa.me/689665893" target="_blank">6 89 66 58 93</a></p>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="contact-card text-center">
+        <span class="material-icons fs-1 text-danger">phone</span>
+        <h5 class="mt-3 fw-bold">Téléphone</h5>
+        <p>Appelez-nous : +237 6 89 66 58 93</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ section -->
+  <section class="mb-5">
+    <h3 class="fw-bold text-primary mb-4">Questions fréquentes</h3>
+    <div class="faq-item">
+      <p><strong>Comment puis-je suivre ma commande ?</strong> Connectez-vous à votre compte et consultez l’historique des commandes.</p>
+    </div>
+    <div class="faq-item">
+      <p><strong>Puis-je modifier ma commande après validation ?</strong> Contactez notre service client rapidement, nous ferons le nécessaire si possible.</p>
+    </div>
+    <div class="faq-item">
+      <p><strong>Quels sont vos horaires de support ?</strong> Du lundi au vendredi, de 9h à 18h.</p>
+    </div>
+    <div class="faq-item">
+      <p><strong>Comment obtenir un remboursement ?</strong> Pour les retours acceptés, le remboursement est effectué sous 5 jours ouvrés.</p>
+    </div>
+  </section>
+
+  <!-- Formulaire de contact -->
+  <section class="mb-5">
+    <h3 class="fw-bold text-primary mb-4">Envoyez-nous un message</h3>
+    <form class="row g-3">
+      <div class="col-md-6">
+        <input type="text" class="form-control" placeholder="Votre nom" required>
+      </div>
+      <div class="col-md-6">
+        <input type="email" class="form-control" placeholder="Votre email" required>
+      </div>
+      <div class="col-12">
+        <textarea class="form-control" rows="5" placeholder="Votre message" required></textarea>
+      </div>
+      <div class="col-12 text-end">
+        <button type="submit" class="btn btn-primary">Envoyer</button>
+      </div>
+    </form>
+  </section>
+
+</div>
+
+<!-- Footer identique -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-col">
+      <h5>À propos</h5>
+      <ul>
+        <li><a href="about.html">Notre histoire</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="blog.html">Blog</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Aide & Support</h5>
+      <ul>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="livraison.html">Livraison & retours</a></li>
+        <li><a href="service-client.html">Service client</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Mon compte</h5>
+      <ul>
+        <li><a href="account.html">Connexion</a></li>
+        <li><a href="cart.html">Mon panier</a></li>
+        <li><a href="#">Commandes</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Contact</h5>
+      <ul>
+        <li><a href="mailto:gillesngomkap@gmail.com">gillesngomkap@gmail.com</a></li>
+        <li><a href="https://wa.me/689665893" target="_blank">WhatsApp : 6 89 66 58 93</a></li>
+        <li><a href="#">Yaoundé, Cameroun</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2025 <strong>Shopezz</strong>. Tous droits réservés.</p>
+    <p class="small-back">Développé avec ❤️  par Gilles Ngomkap</p>
+  </div>
+</footer>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

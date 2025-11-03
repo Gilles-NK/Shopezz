@@ -1,0 +1,295 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>FAQ — Shopezz</title>
+
+  <!-- Google Fonts & Material Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+
+  <style>
+    /* FAQ section */
+    .faq-item {
+      background: #f6f7fb;
+      padding: 16px 20px;
+      border-radius: 10px;
+      margin-bottom: 12px;
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+    .faq-item:hover {
+      background: #fff3e0;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 18px rgba(11,43,74,0.1);
+    }
+    .faq-answer {
+      display: none;
+      padding-top: 10px;
+      font-size: 15px;
+      color: #555;
+      line-height: 1.6;
+    }
+    .faq-title {
+      text-align: center;
+      margin-bottom: 30px;
+      font-size: 28px;
+      font-weight: 700;
+      color: #111;
+    }
+  </style>
+</head>
+
+<body>
+<div class="container">
+
+  <!-- Header identique aux autres pages -->
+ <!-- HEADER -->
+<header class="d-flex justify-content-between align-items-center py-3 border-bottom">
+  <a class="brand d-flex align-items-center text-decoration-none" href="index.html">
+    <div class="logo me-2">
+      <img src="Images/logo e-cmm.png" alt="logo" width="50">
+    </div>
+    <h1 class="h4 m-0 fw-bold text-primary">Shopezz</h1>
+  </a>
+
+  <nav class="main-nav d-none d-md-block">
+    <ul class="nav">
+      <li class="nav-item"><a class="nav-link" href="index.html">Accueil</a></li>
+      <li class="nav-item"><a class="nav-link" href="categories.html">Catégories</a></li>
+      <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+      <li class="nav-item"><a class="nav-link" href="about.html">À propos</a></li>
+    </ul>
+  </nav>
+
+  <div class="d-flex align-items-center">
+    <div class="search-bar me-3 d-none d-md-flex">
+      <input type="search" id="searchInput" class="form-control" placeholder="Rechercher un produit, une marque...">
+      <button class="btn btn-outline-primary ms-2" id="searchBtn">
+        <span class="material-icons">search</span>
+      </button>
+    </div>
+    <div class="icons d-flex gap-3">
+      <!-- Bouton Connexion / Mon compte -->
+      <button id="accountBtn" class="btn btn-outline-primary">Connexion</button>
+      <!-- Panier -->
+      <a class="btn btn-light position-relative" href="panier.html" title="Panier" id="cartLink">
+        <span class="material-icons">shopping_cart</span>
+        <span id="cart-count" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">0</span>
+      </a>
+    </div>
+  </div>
+</header>
+
+<!-- Script pour Mon compte + Panier -->
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const accountBtn = document.getElementById('accountBtn');
+  const cartCount = document.getElementById('cart-count');
+
+  function updateHeader() {
+    // Gestion du bouton Mon compte
+    const user = JSON.parse(localStorage.getItem('user')) || null;
+    if (user && user.name) {
+      accountBtn.textContent = 'Mon compte';
+      accountBtn.classList.remove('btn-outline-primary');
+      accountBtn.classList.add('btn-success');
+    } else {
+      accountBtn.textContent = 'Connexion';
+      accountBtn.classList.remove('btn-success');
+      accountBtn.classList.add('btn-outline-primary');
+    }
+
+    // Compteur panier
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    cartCount.textContent = cart.length;
+  }
+
+  // Initialisation
+  updateHeader();
+
+  // Met à jour si localStorage change (dans un autre onglet)
+  window.addEventListener('storage', updateHeader);
+
+  // Optionnel : mise à jour après ajout d'article si tu utilises un script JS pour ajouter
+  document.addEventListener('itemAddedToCart', updateHeader);
+});
+</script>
+
+  <!-- Page title -->
+  <section class="my-5 text-center">
+    <h2 class="fw-bold text-primary">Foire Aux Questions</h2>
+    <p class="text-muted">Toutes vos questions regroupées pour vous aider à mieux utiliser Shopezz.</p>
+  </section>
+
+  <!-- FAQ container -->
+  <section class="faq-container">
+    <div class="faq-item">
+      <div class="faq-question fw-semibold d-flex justify-content-between align-items-center">
+        Comment passer une commande ? 
+        <span class="material-icons">expand_more</span>
+      </div>
+      <div class="faq-answer">Ajoutez vos articles au panier, puis cliquez sur “Commander”. Suivez les étapes pour renseigner vos informations de livraison et finaliser le paiement.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question fw-semibold d-flex justify-content-between align-items-center">
+        Puis-je modifier ou annuler ma commande ? 
+        <span class="material-icons">expand_more</span>
+      </div>
+      <div class="faq-answer">Oui, vous pouvez modifier ou annuler votre commande tant qu’elle n’a pas encore été expédiée. Contactez rapidement notre service client pour cela.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question fw-semibold d-flex justify-content-between align-items-center">
+        Quels sont les délais de livraison ? 
+        <span class="material-icons">expand_more</span>
+      </div>
+      <div class="faq-answer">Les livraisons prennent en moyenne 2 à 5 jours ouvrables selon votre localisation. Vous recevrez un e-mail de suivi dès l’expédition.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question fw-semibold d-flex justify-content-between align-items-center">
+        Livrez-vous partout au Cameroun ? 
+        <span class="material-icons">expand_more</span>
+      </div>
+      <div class="faq-answer">Oui, nous livrons dans toutes les grandes villes du Cameroun. Pour les zones plus éloignées, les délais peuvent être légèrement plus longs.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question fw-semibold d-flex justify-content-between align-items-center">
+        Quels moyens de paiement acceptez-vous ? 
+        <span class="material-icons">expand_more</span>
+      </div>
+      <div class="faq-answer">Nous acceptons les paiements par Mobile Money (MTN, Orange) et par carte bancaire. Tous les paiements sont 100% sécurisés.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question fw-semibold d-flex justify-content-between align-items-center">
+        Puis-je retourner un article ? 
+        <span class="material-icons">expand_more</span>
+      </div>
+      <div class="faq-answer">Oui, vous disposez de 7 jours après réception pour retourner un article à condition qu’il soit neuf et non utilisé. Contactez notre service client pour les modalités.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question fw-semibold d-flex justify-content-between align-items-center">
+        Comment créer un compte Shopezz ? 
+        <span class="material-icons">expand_more</span>
+      </div>
+      <div class="faq-answer">Cliquez sur “Compte” puis sur “Créer un compte”. Entrez vos informations et validez. Vous recevrez un mail de confirmation.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question fw-semibold d-flex justify-content-between align-items-center">
+        Comment contacter le service client ? 
+        <span class="material-icons">expand_more</span>
+      </div>
+      <div class="faq-answer">
+        Vous pouvez nous contacter via :
+        <ul>
+          <li>📧 Email : <a href="mailto:gillesngomkap@gmail.com">gillesngomkap@gmail.com</a></li>
+          <li>📱 WhatsApp : <a href="https://wa.me/237689665893" target="_blank">+237 6 89 66 58 93</a></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<!-- Footer identique aux autres pages -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-col">
+      <h5>À propos</h5>
+      <ul>
+        <li><a href="about.html">Notre histoire</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="blog.html">Blog</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Aide & Support</h5>
+      <ul>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="livraison.html">Livraison & retours</a></li>
+        <li><a href="service.html">Service client</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Mon compte</h5>
+      <ul>
+        <li><a href="account.html">Connexion</a></li>
+        <li><a href="panier.html">Mon panier</a></li>
+        <li><a href="orders.html">Commandes</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Contact</h5>
+      <ul>
+        <li><a href="mailto:gillesngomkap@gmail.com">gillesngomkap@gmail.com</a></li>
+        <li><a href="https://wa.me/689665893" target="_blank">WhatsApp : 6 89 66 58 93</a></li>
+        <li><a href="#">Yaoundé, Cameroun</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom text-center mt-4">
+    <p>© 2025 <strong>Shopezz</strong>. Tous droits réservés.</p>
+    <p class="small-back">Développé avec ❤️  par Gilles Ngomkap</p>
+  </div>
+</footer>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- Script FAQ interactif -->
+<script>
+  const questions = document.querySelectorAll('.faq-question');
+  questions.forEach(q => {
+    q.addEventListener('click', () => {
+      const answer = q.nextElementSibling;
+      const icon = q.querySelector('.material-icons');
+      const isOpen = answer.style.display === 'block';
+      document.querySelectorAll('.faq-answer').forEach(a => a.style.display = 'none');
+      document.querySelectorAll('.faq-question .material-icons').forEach(i => i.textContent = 'expand_more');
+      if (!isOpen) {
+        answer.style.display = 'block';
+        icon.textContent = 'expand_less';
+      }
+    });
+  });
+  const accountBtn = document.getElementById('accountBtn');
+const cartCount = document.getElementById('cart-count');
+
+function updateHeader() {
+  // Récupère l'utilisateur depuis localStorage
+  const user = JSON.parse(localStorage.getItem('user')) || null;
+
+  if (user && user.name) {
+    // L'utilisateur est connecté
+    accountBtn.textContent = 'Mon compte';
+    accountBtn.classList.remove('btn-outline-primary');
+    accountBtn.classList.add('btn-success'); // bouton vert
+  } else {
+    // Utilisateur non connecté
+    accountBtn.textContent = 'Connexion';
+    accountBtn.classList.remove('btn-success');
+    accountBtn.classList.add('btn-outline-primary');
+  }
+
+  // Met à jour le panier
+  const cart = JSON.parse(localStorage.getItem('cart')) || [];
+  cartCount.textContent = cart.length;
+}
+
+updateHeader();
+
+</script>
+
+</body>
+</html>
