@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mon panier - Shoppezz</title>
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <!-- Style responsive intégré -->
+  <style>
+    /* --- RESET & BASE --- */
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #f9fafc;
+      margin: 0;
+      padding: 0;
+    }
+
+    h1, h2, h3, h4, h5, p {
+      margin: 0;
+      padding: 0;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    /* --- NAVBAR --- */
+    .navbar {
+      padding: 1rem 0;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+
+    .navbar-brand {
+      font-size: 1.5rem;
+      font-weight: 700;
+    }
+
+    .navbar .btn {
+      font-size: 0.9rem;
+      border-radius: 50px;
+      padding: 0.5rem 1.2rem;
+      transition: all 0.2s ease;
+    }
+
+    .navbar .btn:hover {
+      transform: translateY(-2px);
+      background-color: #e0e0e0;
+    }
+
+    /* --- MAIN PANIER --- */
+    main {
+      padding: 2rem 1rem;
+    }
+
+    h1 {
+      font-size: 1.8rem;
+      text-align: center;
+      word-wrap: break-word;
+      margin-bottom: 2rem;
+    }
+
+    #cart-view {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    /* Cart item */
+    .cart-item {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      background: #fff;
+      border-radius: 12px;
+      padding: 1rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .cart-item:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    .cart-item img {
+      width: 100px;
+      height: 100px;
+      object-fit: cover;
+      border-radius: 10px;
+      flex-shrink: 0;
+      transition: all 0.2s ease;
+    }
+
+    .cart-item .info {
+      flex: 1 1 200px;
+      margin-left: 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.3rem;
+    }
+
+    .cart-item h5 {
+      font-size: 1rem;
+      font-weight: 600;
+      word-break: break-word;
+    }
+
+    .cart-item p {
+      color: #666;
+      font-size: 0.9rem;
+      word-break: break-word;
+    }
+
+    .cart-item .actions {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 0.5rem;
+    }
+
+    .cart-item .actions button {
+      border: none;
+      background: #e63946;
+      color: white;
+      border-radius: 8px;
+      padding: 6px 10px;
+      font-size: 0.85rem;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .cart-item .actions button:hover {
+      background: #d62828;
+    }
+
+    /* --- FOOTER --- */
+    footer {
+      background: #fff;
+      border-top: 1px solid #e0e0e0;
+      font-size: 0.9rem;
+      text-align: center;
+      margin-top: 2rem;
+      padding: 1.5rem 1rem;
+    }
+
+    /* --- RESPONSIVE --- */
+    @media (max-width: 992px) {
+      h1 {
+        font-size: 1.6rem;
+      }
+      main {
+        padding: 1.5rem 1rem;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .cart-item {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .cart-item img {
+        width: 100%;
+        height: auto;
+        margin-bottom: 10px;
+      }
+
+      .cart-item .info {
+        margin-left: 0;
+        width: 100%;
+      }
+
+      .cart-item .actions {
+        width: 100%;
+        align-items: stretch;
+        flex-direction: row;
+        gap: 0.5rem;
+      }
+
+      .cart-item .actions button {
+        width: 100%;
+      }
+    }
+
+    @media (max-width: 576px) {
+      h1 {
+        font-size: 1.4rem;
+      }
+
+      #cart-view {
+        gap: 0.8rem;
+      }
+
+      main {
+        padding: 1rem 0.5rem;
+      }
+
+      /* Navbar empilée et boutons full width */
+      .navbar .container {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+        text-align: center;
+      }
+
+      .navbar-brand {
+        font-size: 1.3rem;
+      }
+
+      .navbar .btn {
+        width: 100%;
+      }
+
+      /* Footer */
+      footer {
+        font-size: 0.8rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar simple -->
+  <nav class="navbar navbar-light bg-white shadow-sm">
+    <div class="container d-flex flex-wrap justify-content-between align-items-center">
+      <a href="index.html" class="navbar-brand fw-bold text-dark">Shoppezz</a>
+      <a href="index.html" class="btn btn-outline-secondary">Retour à l'accueil</a>
+    </div>
+  </nav>
+
+  <!-- Panier -->
+  <main class="container py-5">
+    <h1 class="fw-bold">🛒 Mon panier</h1>
+    <!-- 🔥 JS injecte le contenu du panier -->
+    <div id="cart-view" class="mt-3"></div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="py-4 text-center text-muted">
+    © <span id="year"></span> Shoppezz
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Script principal -->
+  <script src="scripts.js"></script>
+
+  <script>
+    // Ajout automatique de l'année dans le footer
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
