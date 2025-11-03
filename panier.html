@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mon panier - Shoppezz</title>
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <!-- Ton style -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Navbar simple -->
+  <nav class="navbar navbar-light bg-white shadow-sm">
+    <div class="container">
+      <a href="index.html" class="navbar-brand fw-bold text-dark">Shoppezz</a>
+      <a href="index.html" class="btn btn-outline-secondary">Retour à l'accueil</a>
+    </div>
+  </nav>
+
+  <!-- Panier -->
+  <main class="container py-5">
+    <h1 class="mb-4 fw-bold">🛒 Mon panier</h1>
+    
+    <!-- 🔥 C’est ICI que le JS injecte le contenu du panier -->
+    <div id="cart-view" class="mt-3"></div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="py-4 text-center text-muted">
+    © <span id="year"></span> Shoppezz
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Script principal -->
+  <script src="scripts.js"></script>
+</body>
+</html>

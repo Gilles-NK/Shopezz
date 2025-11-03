@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Blog — Shopezz</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles1.css">
+</head>
+<body>
+
+  <div class="container">
+    <header class="header">
+      <a href="index.html" class="back-btn">⬅️ Retour</a>
+      <h1>Blog — Shopezz</h1>
+      <p class="subtitle">Découvrez nos conseils, tendances et astuces pour mieux acheter en ligne ✨</p>
+    </header>
+
+    <!-- Barre de recherche -->
+    <div class="search-bar">
+      <input id="searchInput" type="text" placeholder="Rechercher un article..." />
+    </div>
+
+    <!-- Catégories -->
+    <nav class="categories">
+      <a href="#">🛍️ Mode</a>
+      <a href="#">📱 Technologie</a>
+      <a href="#">🏠 Maison</a>
+      <a href="#">🏀 Sport</a>
+      <a href="#">💄 Beauté</a>
+    </nav>
+
+    <!-- Section Articles -->
+    <section id="blogPosts" class="blog-posts">
+      <article class="post">
+        <img src="https://i.pinimg.com/736x/e6/f7/87/e6f78720e3c4edb3107970ea97dd11d4.jpg" alt="Conseils mode">
+        <h3>Comment bien choisir ses vêtements en ligne</h3>
+        <p>Acheter sur Internet peut être un défi — voici nos astuces pour trouver la taille parfaite et éviter les mauvaises surprises...</p>
+        <a href="article1.html" class="btn">Lire plus</a>
+      </article>
+
+      <article class="post">
+        <img src="https://i.pinimg.com/1200x/77/e8/e8/77e8e808ef1723c4fea0ca56575fed5d.jpg" alt="Tendances e-commerce">
+        <h3>Les tendances e-commerce 2025 à ne pas manquer</h3>
+        <p>Découvrez les nouvelles habitudes d’achat des consommateurs et comment elles influencent le marché cette année.</p>
+        <a href="article2.html" class="btn">Lire plus</a>
+      </article>
+
+      <article class="post">
+        <img src="https://i.pinimg.com/736x/5b/d0/da/5bd0dabc6c55581d49d96453a06c87c9.jpg" alt="High-tech">
+        <h3>Top 5 gadgets high-tech à petit prix</h3>
+        <p>Envie d’innovation sans te ruiner ? Voici notre sélection 2025 de gadgets utiles et accessibles.</p>
+        <a href="article3.html" class="btn">Lire plus</a>
+      </article>
+
+      <article class="post">
+        <img src="https://i.pinimg.com/736x/8e/ad/df/8eaddfd74d9d229542b8303ce9f060d6.jpg" alt="Beauté">
+        <h3>Les indispensables beauté pour un look éclatant</h3>
+        <p>Nos conseils beauté et produits incontournables pour rester au top toute l’année.</p>
+        <a href="article4.html" class="btn">Lire plus</a>
+      </article>
+
+      <article class="post">
+        <img src="https://i.pinimg.com/736x/3c/40/77/3c407730cbefbfe62ce4b6567f8f6b3f.jpg" alt="Maison&Deco">
+        <h3>5 idées déco pour transformer votre maison</h3>
+        <p>Découvrez nos conseils simples et élégants pour moderniser votre intérieur et lui donner plus de style.</p>
+        <a href="article5.html" class="btn">Lire plus</a>
+      </article>
+    </section>
+
+    <!-- Articles populaires -->
+    <section class="popular">
+      <h2>📈 Articles populaires</h2>
+      <ul>
+        <li><a href="#">5 erreurs à éviter quand on achète en ligne</a></li>
+        <li><a href="#">Comment reconnaître un site e-commerce fiable</a></li>
+        <li><a href="#">Les produits les plus vendus sur Shopezz</a></li>
+      </ul>
+    </section>
+
+    <footer class="footer">
+      <p>© 2025 Shopezz — Tous droits réservés</p>
+      <a href="index.html"> Retour à l’accueil</a>
+    </footer>
+  </div>
+
+  <!-- Script de recherche -->
+  <script>
+    const searchInput = document.getElementById('searchInput');
+    const posts = document.querySelectorAll('.post');
+
+    searchInput.addEventListener('input', () => {
+      const searchText = searchInput.value.toLowerCase();
+
+      posts.forEach(post => {
+        const title = post.querySelector('h3').textContent.toLowerCase();
+        const content = post.querySelector('p').textContent.toLowerCase();
+
+        if (title.includes(searchText) || content.includes(searchText)) {
+          post.style.display = 'block';
+        } else {
+          post.style.display = 'none';
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>

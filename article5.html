@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Blog — 5 idées déco pour transformer votre maison</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background-color: #fff8f0;
+      color: #333;
+    }
+
+    header {
+      background-color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 40px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    header a {
+      text-decoration: none;
+      color: #ff9800;
+      font-weight: 600;
+    }
+
+    .article-container {
+      position: relative;
+      height: 100vh;
+      background: url('https://i.pinimg.com/1200x/8e/24/e4/8e24e49766aded79bf7b99935264fbea.jpg') center/cover no-repeat;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.35);
+      backdrop-filter: blur(2px);
+      transition: backdrop-filter 0.4s ease, background 0.4s ease;
+    }
+
+    .article-container:hover .overlay {
+      backdrop-filter: blur(6px);
+      background: rgba(0,0,0,0.55);
+    }
+
+    .article-content {
+      position: relative;
+      z-index: 2;
+      max-width: 720px;
+      background: rgba(255,255,255,0.92);
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.2);
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .article-container:hover .article-content {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    }
+
+    h1 {
+      color: #e65100;
+      font-size: 2rem;
+      margin-bottom: 10px;
+    }
+
+    p {
+      color: #555;
+      line-height: 1.6;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 12px 28px;
+      background-color: #ff9800;
+      color: white;
+      border-radius: 50px;
+      text-decoration: none;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+
+    .btn:hover {
+      background-color: #e68900;
+      transform: scale(1.05);
+    }
+
+    footer {
+      text-align: center;
+      margin: 40px 0;
+      color: #777;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <a href="blog.html">⬅ Retour au Blog</a>
+    <a href="index.html">Accueil</a>
+  </header>
+
+  <div class="article-container">
+    <div class="overlay"></div>
+    <div class="article-content">
+      <h1>5 idées déco pour transformer votre maison</h1>
+      <p>
+        Envie de donner un nouveau souffle à votre intérieur ? Découvrez 5 idées simples et tendances pour transformer 
+        votre maison : jeux de lumière, plantes naturelles, mobilier minimaliste, couleurs chaudes et touches décoratives 
+        modernes qui feront toute la différence.
+      </p>
+      <a href="https://www.google.com/search?q=idees+deco+maison+2025" target="_blank" class="btn">Lire plus sur Google</a>
+    </div>
+  </div>
+
+  <footer>© 2025 Shopezz — Tous droits réservés</footer>
+</body>
+</html>
