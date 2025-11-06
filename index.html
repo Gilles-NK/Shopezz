@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Shopezz — Accueil</title>
+
+  <!-- Google Fonts & Material Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Ton CSS personnalisé -->
+  <link rel="stylesheet" href="style-responsive-full.css">
+</head>
+
+<body>
+<div class="container">
+
+  <!-- Header -->
+  <header class="d-flex justify-content-between align-items-center py-3 border-bottom">
+    <a class="brand d-flex align-items-center text-decoration-none" href="index.html">
+      <div class="logo me-2">
+        <img src="Images/logo e-cmm.png" alt="logo" width="50">
+      </div>
+      <h1 class="h4 m-0 fw-bold text-primary">Shopezz</h1>
+    </a>
+
+    <nav class="main-nav d-none d-md-block">
+      <ul class="nav">
+        <li class="nav-item"><a class="nav-link" href="index.html">Accueil</a></li>
+        <li class="nav-item"><a class="nav-link" href="categories.html">Catégories</a></li>
+        <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+        <li class="nav-item"><a class="nav-link" href="about.html">À propos</a></li>
+      </ul>
+    </nav>
+
+    <div class="d-flex align-items-center">
+      <div class="search-bar me-3 d-none d-md-flex">
+        <input type="search" id="searchInput" class="form-control" placeholder="Rechercher un produit, une marque...">
+        <button class="btn btn-outline-primary ms-2" id="searchBtn">
+          <span class="material-icons">search</span>
+        </button>
+      </div>
+      <div class="icons d-flex gap-3">
+      <!-- Bouton connexion dynamique -->
+      <button id="accountBtn" class="btn btn-outline-primary">Connexion</button>
+        <a class="btn btn-light position-relative" href="panier.html" title="Panier" id="cartLink">
+          <span class="material-icons">shopping_cart</span>
+          <span id="cart-count" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">0</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero row align-items-center my-5">
+    <div class="col-md-6">
+      <h2 class="display-5 fw-bold text-primary">Trouvez tout,facilement.</h2>
+      <p class="lead">Marketplace généraliste — produits variés, bons plans et livraison efficace.</p>
+      <a class="btn btn-primary btn-lg" href="#products">Voir les produits</a>
+    </div>
+    <div class="col-md-6 text-center">
+      <img src="https://i.pinimg.com/736x/41/28/e5/4128e5984d2e40ef30e6b8ae0eef8095.jpg"
+           alt="Illustration shopping" class="img-fluid rounded shadow">
+    </div>
+
+  </section>
+
+ <!-- Categories quick -->
+<div class="d-flex justify-content-between align-items-center mb-3">
+  <h3>Catégories</h3>
+  <a class="small-link text-decoration-none" href="categories.html"></a>
+</div>
+
+<div class="row text-center g-3">
+  <div class="col-6 col-md-3">
+    <div class="category-card p-3 border rounded" data-category="Maison">
+      <span class="material-icons fs-1 text-warning">kitchen</span>
+      <p class="mt-2 fw-semibold">Maison</p>
+    </div>
+  </div>
+
+  <div class="col-6 col-md-3">
+    <div class="category-card p-3 border rounded" data-category="Électronique">
+      <span class="material-icons fs-1 text-primary">phone_iphone</span>
+      <p class="mt-2 fw-semibold">Électronique</p>
+    </div>
+  </div>
+
+  <div class="col-6 col-md-3">
+    <div class="category-card p-3 border rounded" data-category="Mode">
+      <span class="material-icons fs-1 text-success">checkroom</span>
+      <p class="mt-2 fw-semibold">Mode</p>
+    </div>
+  </div>
+
+  <div class="col-6 col-md-3">
+    <div class="category-card p-3 border rounded" data-category="Sport">
+      <span class="material-icons fs-1 text-danger">fitness_center</span>
+      <p class="mt-2 fw-semibold">Sport</p>
+    </div>
+  </div>
+</div>
+
+
+<!-- Bouton retour (caché par défaut) -->
+<div id="backBtnContainer" class="mb-3" style="display: none; opacity: 0; transition: opacity 0.3s ease;">
+  <button id="backBtn" class="btn btn-outline-primary">
+    <span class="material-icons">arrow_back</span> Retour à l’accueil
+  </button>
+</div>
+
+
+  <!-- Products -->
+   
+  <div class="d-flex justify-content-between align-items-center mt-5 mb-3">
+    <h3>Produits populaires</h3>
+    <a class="small-link text-decoration-none" href="product.html">Voir tous →</a>
+  </div> 
+
+  <!-- Produits populaires -->
+
+
+  <section id="products" class="container my-5">
+    <!-- Les cartes seront générées par scripts.js -->
+  </section>
+
+  <!-- Testimonial -->
+  <div class="testimonial bg-primary text-white text-center py-4 my-5 rounded">
+    <p class="mb-0">« Livraison rapide et produit conforme à la description. Service client réactif. » — Client satisfait</p>
+  </div>
+</div>
+
+  <!-- Footer -->
+  <footer>
+    <div class=" footer-grid">
+  
+      <div class="footer-col">
+        <h5>À propos</h5>
+        <ul>
+          <li><a href="about.html">Notre histoire</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="blog.html">Blog</a></li>
+        </ul>
+      </div>
+  
+      <div class="footer-col">
+        <h5>Aide & Support</h5>
+        <ul>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="livraison.html">Livraison & retours</a></li>
+          <li><a href="service.html">Service client</a></li>
+        </ul>
+      </div>
+  
+      <div class="footer-col">
+        <h5>Mon compte</h5>
+        <ul>
+          <li><a href="account.html">Connexion</a></li>
+          <li><a href="panier.html">Mon panier</a></li>
+          <li><a href="orders.html">Commandes</a></li>
+        </ul>
+      </div>
+  
+      <div class="footer-col">
+        <h5>Contact</h5>
+        <ul>
+          <li><a href="mailto:gillesngomkap@gmail.com">gillesngomkap@gmail.com</a></li>
+          <li><a href="https://wa.me/689665893" target="_blank">WhatsApp : 6 89 66 58 93</a></li>
+          <li><a href="#">Yaoundé, Cameroun</a></li>
+        </ul>
+      </div>
+  
+    </div>
+  
+    <div class="footer-bottom">
+      <p>© 2025 <strong>Shopezz</strong>. Tous droits réservés.</p>
+      <p class="small-back">Développé avec ❤️  par Gilles Ngomkap</p>
+    </div>
+  </footer>
+  
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<!-- Script -->
+<script src="scripts.js"></script>
+<script>
+  const accountBtn = document.getElementById("accountBtn");
+
+  accountBtn.addEventListener("click", () => {
+    const user = JSON.parse(localStorage.getItem("user"));
+
+    if (user && user.name) {
+      // Utilisateur connecté → on va vers son compte
+      window.location.href = "account.html";
+    } else {
+      // Pas connecté → on va vers la page d'inscription
+      window.location.href = "register.html";
+    }
+  });
+</script>
+</body>
+</html>
